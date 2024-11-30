@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import ProfileScreen from './src/pages/profile';
+import Constants from 'expo-constants';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      {/* Status bar dengan gaya khas WhatsApp */}
+      <StatusBar style="light" backgroundColor="#075E54" />
+      {/* Memuat halaman ProfileScreen */}
+      <ProfileScreen />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#ECE5DD',
+    paddingTop: Constants.statusBarHeight,
   },
 });
